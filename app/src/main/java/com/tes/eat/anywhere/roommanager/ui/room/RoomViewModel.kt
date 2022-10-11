@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.tes.eat.anywhere.roommanager.model.Repository.Repository
 import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.EmployeeApi
 import com.tes.eat.anywhere.roommanager.model.data.room.Room
+import com.tes.eat.anywhere.roommanager.model.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
