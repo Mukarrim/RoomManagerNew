@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tes.eat.anywhere.roommanager.model.remote.news.NewsApi
 import com.tes.eat.anywhere.roommanager.model.data.news.News
+import com.tes.eat.anywhere.roommanager.model.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    private val api: NewsApi
+    private val repository: Repository
 ) : ViewModel() {
 
     private val _news = MutableLiveData<News>()
@@ -22,7 +23,7 @@ class NewsViewModel @Inject constructor(
     // API call to fetch the data
     fun getNews() {
         CoroutineScope(Dispatchers.Main).launch {
-            val newsList = api.getNews()
+            val newsList = repository.getNews()
             // verify if the response was successful
             if (newsList.isSuccessful) {
                 _news.postValue(newsList.body())
