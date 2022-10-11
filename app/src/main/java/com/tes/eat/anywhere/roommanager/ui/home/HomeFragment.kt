@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.tes.eat.anywhere.roommanager.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
+//always home is home
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
