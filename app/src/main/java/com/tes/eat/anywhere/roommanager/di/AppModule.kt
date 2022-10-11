@@ -1,10 +1,12 @@
 package com.tes.eat.anywhere.roommanager.di
 
 
-import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.PeopleApiDetails
-import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.EmployeeApi
+import com.tes.eat.anywhere.roommanager.model.Repository.Repository
+import com.tes.eat.anywhere.roommanager.model.Repository.RepositoryImpl
 import com.tes.eat.anywhere.roommanager.model.remote.news.NewsApi
 import com.tes.eat.anywhere.roommanager.model.remote.news.NewsApiDetails
+import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.EmployeeApi
+import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.PeopleApiDetails
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,13 +27,22 @@ class AppModule {
 
     @Provides
     //to provide the API instance references in code use
-    fun provideAPI(retrofit: Retrofit): EmployeeApi =retrofit.create(EmployeeApi::class.java)
+    fun provideEmployeeApiAPI(retrofit: Retrofit): EmployeeApi =
+        retrofit.create(EmployeeApi::class.java)
 
     @Provides
     //to provide the API instance references in code use
-    fun provideNewsAPI(retrofit: Retrofit): NewsApi =retrofit.newBuilder()
+    fun provideNewsAPI(retrofit: Retrofit): NewsApi = retrofit.newBuilder()
         .baseUrl(NewsApiDetails.BASE_URL)
         .build().create(NewsApi::class.java)
+
+    @Provides
+    fun provideRepository(employeeApi: EmployeeApi, newsApi: NewsApi
+    ): Repository {
+        return RepositoryImpl(
+            employeeApi, newsApi
+        )
+    }
 }
 
 /*
