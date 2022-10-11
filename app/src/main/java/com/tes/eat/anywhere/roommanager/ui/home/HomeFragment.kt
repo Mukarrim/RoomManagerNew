@@ -12,13 +12,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 //always home is home
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
-
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,7 +33,6 @@ class HomeFragment : Fragment() {
         }
         return root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
