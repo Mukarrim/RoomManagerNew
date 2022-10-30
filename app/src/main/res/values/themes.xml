@@ -22,4 +22,5 @@
     <style name="Theme.RoomManager.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.RoomManager.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.ComposeLearningApp" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

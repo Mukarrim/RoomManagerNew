@@ -1,4 +1,4 @@
-package com.tes.eat.anywhere.roommanager.model.Repository
+package com.tes.eat.anywhere.roommanager.model.repository
 
 import com.tes.eat.anywhere.roommanager.model.remote.news.NewsApi
 import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.EmployeeApi

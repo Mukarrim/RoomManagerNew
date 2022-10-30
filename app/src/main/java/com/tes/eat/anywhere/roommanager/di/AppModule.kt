@@ -1,12 +1,12 @@
 package com.tes.eat.anywhere.roommanager.di
 
 
+import com.tes.eat.anywhere.roommanager.model.repository.RepositoryImpl
+import com.tes.eat.anywhere.roommanager.model.repository.Repository
 import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.PeopleApiDetails
 import com.tes.eat.anywhere.roommanager.model.remote.virginmoney.EmployeeApi
 import com.tes.eat.anywhere.roommanager.model.remote.news.NewsApi
 import com.tes.eat.anywhere.roommanager.model.remote.news.NewsApiDetails
-import com.tes.eat.anywhere.roommanager.model.repository.Repository
-import com.tes.eat.anywhere.roommanager.model.repository.RepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module // to define the definition of  depoendancy injection
 @InstallIn(SingletonComponent::class) //to define the scope of dependancy injection
 class AppModule {
-    //define all the dependancies you will use
+    //define all the dependencies you will use
     @Provides
     //provide the retrofit instance
     fun providesRetrofit(): Retrofit = Retrofit.Builder()
@@ -38,7 +38,7 @@ class AppModule {
     @Provides
     fun provideRepository(
         employeeApi: EmployeeApi,newsApi: NewsApi
-    ):Repository{
+    ): Repository {
         return RepositoryImpl(employeeApi,newsApi)
     }
 }

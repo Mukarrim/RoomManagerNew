@@ -51,7 +51,7 @@
                     android:title="Setting" />
 
                 <item
-                    android:id="@+id/item5"
+                    android:id="@+id/nav_login"
                     android:icon="@drawable/login"
                     android:title="Login" />
             </menu>
@@ -65,9 +65,9 @@
             android:title="Follow us">
             <menu>
                 <item
-                    android:id="@+id/item6"
-                    android:icon="@drawable/twitter"
-                    android:title="Twitter" />
+                    android:id="@+id/nav_sign_up"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Sign Up" />
 
                 <item
                     android:id="@+id/item7"
